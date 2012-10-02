@@ -6,6 +6,10 @@
 
 Coming soon.
 
+## Installation
+
+Coming soon.
+
 # Changelog
 
 This project uses [Semantic Versioning](http://semver.org/) for release numbering.
