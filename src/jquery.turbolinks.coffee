@@ -9,3 +9,15 @@
 ###
 
 $ = require?('jquery') || window.jQuery
+
+callbacks = []
+
+ready = ->
+  callback() for callback in callbacks
+
+$(ready)
+
+$.fn.ready = (callback) ->
+  callbacks.push(callback)
+
+$(document).on('page:change', ready)
