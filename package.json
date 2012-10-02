@@ -8,7 +8,6 @@
     "coffee-script": "*",
     "mocha":         "*",
     "chai":          "*",
-    "chai-jquery":   "*",
     "sinon":         "*",
     "sinon-chai":    "*",
     "uglify-js":     "*",
