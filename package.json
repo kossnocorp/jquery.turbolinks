@@ -1,0 +1,26 @@
+{
+  "name": "jquery.turbolinks",
+  "version": "0.1.0",
+  "author": "Sasha Koss <koss@nocorp.me>",
+  "description": "jQuery plugin for ",
+
+  "devDependencies": {
+    "coffee-script": "*",
+    "mocha":         "*",
+    "chai":          "*",
+    "chai-jquery":   "*",
+    "sinon":         "*",
+    "sinon-chai":    "*",
+    "uglify-js":     "*"
+  },
+
+  "license": "MIT",
+
+  "engine": {
+    "node": ">=0.4"
+  },
+
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha ./spec/*_spec.coffee --compilers coffee:coffee-script -R spec -c"
+  }
+}
