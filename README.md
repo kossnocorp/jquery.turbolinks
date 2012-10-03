@@ -1,20 +1,32 @@
 # jQuery Turbolinks
 
-[![Build Status](https://secure.travis-ci.org/kossnocorp/jquery.turbolinks.png?branch=master)](http://travis-ci.org/kossnocorp/jquery.turbolinks)
+Do you like [Turbolinks](https://github.com/rails/turbolinks)? It's easy and fast way to imporove user experience of surfing on your site.
+
+But if you have large codebase with lots of `$(el).bind(...)` Turbolinks will surprise you. Most part of you JavaScripts stop working in usual way. It's because the nodes on which you bind events no longer exist.
+
+I wrote jquery.turbolinks to solve this problem in [my project](http://amplifr.com). It's easy to use: just require it *after* `jquery.js` and `tubrolinks.js`, but before rest scripts.
 
 ## Usage
 
-Coming soon.
+Gemfile:
+``` js
+gem 'jquery-turbolinks'
+```
 
-## Installation
+JavaScript manifest file:
+``` js
+//= require jquery.turbolinks
+```
 
-Coming soon.
+And now it just works!
 
 # Changelog
 
 This project uses [Semantic Versioning](http://semver.org/) for release numbering.
 
-Not yet released.
+# 0.1.0 (October 3, 2012)
+
+* First, initial release
 
 # Contributors
 
