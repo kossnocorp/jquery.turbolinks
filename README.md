@@ -6,6 +6,8 @@ But if you have large codebase with lots of `$(el).bind(...)` Turbolinks will su
 
 I wrote jquery.turbolinks to solve this problem in [my project](http://amplifr.com). It's easy to use: just require it *after* `jquery.js` and `tubrolinks.js`, but before rest scripts.
 
+Sponsored by [Evil Martians](http://evilmartians.com/).
+
 ## Usage
 
 Gemfile:
