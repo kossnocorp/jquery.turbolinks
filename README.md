@@ -24,14 +24,12 @@ And now it just works!
 
 This project uses [Semantic Versioning](http://semver.org/) for release numbering.
 
-# 0.1.0 (October 3, 2012)
+## 0.1.0 (October 3, 2012)
 
 * First, initial release
 
 # Contributors
 
 Idea and code by [@kossnocorp](http://koss.nocorp.me/).
-
-Check out full list of [contributors](https://github.com/kossnocorp/jquery.turbolinks/contributors).
 
 # [The MIT License](https://github.com/kossnocorp/jquery.turbolinks/blob/master/LICENSE.md)
