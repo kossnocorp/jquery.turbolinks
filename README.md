@@ -1,10 +1,10 @@
 # jQuery Turbolinks
 
-Do you like [Turbolinks](https://github.com/rails/turbolinks)? It's easy and fast way to imporove user experience of surfing on your site.
+Do you like [Turbolinks](https://github.com/rails/turbolinks)? It's easy and fast way to improve user experience of surfing on your website.
 
-But if you have large codebase with lots of `$(el).bind(...)` Turbolinks will surprise you. Most part of you JavaScripts stop working in usual way. It's because the nodes on which you bind events no longer exist.
+But if you have a large codebase with lots of `$(el).bind(...)` Turbolinks will surprise you. Most part of your JavaScripts will stop working in usual way. It's because the nodes on which you bind events no longer exist.
 
-I wrote jquery.turbolinks to solve this problem in [my project](http://amplifr.com). It's easy to use: just require it *after* `jquery.js` and `tubrolinks.js`, but before rest scripts.
+I wrote jquery.turbolinks to solve this problem in [my project](http://amplifr.com). It's easy to use: just require it *after* `jquery.js` and `tubrolinks.js`, but before other scripts.
 
 Sponsored by [Evil Martians](http://evilmartians.com/).
 
@@ -20,7 +20,7 @@ JavaScript manifest file:
 //= require jquery.turbolinks
 ```
 
-And now it just works!
+And it just works!
 
 # Changelog
 
