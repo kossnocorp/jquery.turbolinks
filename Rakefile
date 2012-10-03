@@ -36,3 +36,7 @@ task :test do
   `bundle exec terminal-notifier -message '#{message}' -title 'Test results' -remove TEST_RESULTS -group TEST_RESULTS`
   Talks.say message, detach: true
 end
+
+task :build do
+  `./node_modules/coffee-script/bin/coffee --compile --output ./vendor/assets/javascripts/ ./src/jquery.turbolinks.coffee`
+end
