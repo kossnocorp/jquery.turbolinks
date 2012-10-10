@@ -1,24 +1,52 @@
+jsdom = require('jsdom').jsdom
+
+global.document = jsdom()
+global.window   = document.createWindow()
+
 require('../src/jquery.turbolinks.coffee')
 
 chai      = require('chai')
 sinon     = require('sinon')
 sinonChai = require('sinon-chai')
-jQuery    = require('jquery')
+$         = require('jquery')
 
 chai.should()
 chai.use(sinonChai)
 
-describe 'jQuery Turbolinks', ->
+describe '$ Turbolinks', ->
+
+  callback1 = callback2 = null
+
+  beforeEach ->
+     $(callback1 = sinon.spy())
+     $(callback2 = sinon.spy())
 
   it '''
        should trigger callbacks passed to
-       `jQuery()` and `jQuery.ready()` when page:change
+       `$()` and `$.ready()` when page:load
        event fired
      ''', ->
-       jQuery(callback1 = sinon.spy())
-       jQuery(callback2 = sinon.spy())
+       $(document).trigger('page:load')
 
-       jQuery(document).trigger('page:change')
+       callback1.should.have.been.calledOnce
+       callback2.should.have.been.calledOnce
 
-       callback1.should.have.been.calledTwice
-       callback2.should.have.been.calledTwice
+  describe '$.bindReady', ->
+
+    it 'should unbind default (page:load) event', ->
+       $.bindReady('random_event_name')
+
+       $(document).trigger('page:load')
+
+       callback1.should.have.not.been.called
+       callback2.should.have.not.been.called
+
+    it 'should bind ready to passed function', ->
+       $.bindReady('page:change')
+
+       $(document)
+         .trigger('page:load')
+         .trigger('page:change')
+
+       callback1.should.have.been.calledOnce
+       callback2.should.have.been.calledOnce
