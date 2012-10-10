@@ -25,4 +25,4 @@ $.fn.ready = (callback) ->
   callbacks.push(callback)
 
 # Bind `ready` to Tubolinks page change event
-$(document).on('page:change', ready)
+$(document).on('page:load', ready)
