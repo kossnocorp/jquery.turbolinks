@@ -34,10 +34,10 @@
     return callbacks.push(callback);
   };
 
-  $.bindReady = function(event) {
+  $.setReadyEvent = function(event) {
     return $(document).off('.turbolinks').on(event + '.turbolinks', ready);
   };
 
-  $.bindReady('page:load');
+  $.setReadyEvent('page:load');
 
 }).call(this);
