@@ -25,10 +25,10 @@ $.fn.ready = (callback) ->
   callbacks.push(callback)
 
 # Bind ready to passed event
-$.bindReady = (event) ->
+$.setReadyEvent = (event) ->
   $(document)
     .off('.turbolinks')
     .on(event + '.turbolinks', ready)
 
 # Bind `ready` to Tubolinks page load event
-$.bindReady('page:load')
+$.setReadyEvent('page:load')

@@ -31,10 +31,10 @@ describe '$ Turbolinks', ->
        callback1.should.have.been.calledOnce
        callback2.should.have.been.calledOnce
 
-  describe '$.bindReady', ->
+  describe '$.setReadyEvent', ->
 
     it 'should unbind default (page:load) event', ->
-       $.bindReady('random_event_name')
+       $.setReadyEvent('random_event_name')
 
        $(document).trigger('page:load')
 
@@ -42,7 +42,7 @@ describe '$ Turbolinks', ->
        callback2.should.have.not.been.called
 
     it 'should bind ready to passed function', ->
-       $.bindReady('page:change')
+       $.setReadyEvent('page:change')
 
        $(document)
          .trigger('page:load')
