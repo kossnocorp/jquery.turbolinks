@@ -11,7 +11,8 @@
     "sinon":         "*",
     "sinon-chai":    "*",
     "uglify-js":     "*",
-    "jquery":        "*"
+    "jquery":        "*",
+    "jsdom":         "*"
   },
 
   "license": "MIT",
