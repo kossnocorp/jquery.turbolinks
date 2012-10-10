@@ -24,7 +24,7 @@ And it just works!
 
 ## `$.setReadyEvent`
 
-By default `[ready](https://github.com/kossnocorp/jquery.turbolinks/blob/master/src/jquery.turbolinks.coffee#L17:L18)` function is binded to `[page:load](https://github.com/rails/turbolinks/#events)` event.
+By default [ready](https://github.com/kossnocorp/jquery.turbolinks/blob/master/src/jquery.turbolinks.coffee#L17:L18) function is binded to [page:load](https://github.com/rails/turbolinks/#events) event.
 
 If you want to change it use `$.setReadyEvent` function:
 
