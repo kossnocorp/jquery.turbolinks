@@ -36,6 +36,10 @@ $.setReadyEvent('page:change');
 
 This project uses [Semantic Versioning](http://semver.org/) for release numbering.
 
+## 0.2.1 (October 15, 2012)
+
+* Pass jQuery object to each callback (https://github.com/kossnocorp/jquery.turbolinks/issues/4)
+
 ## 0.2.0 (October 10, 2012)
 
 * Change event: `page:change` -> `page:load` (kudos to [@davydotcom](https://github.com/davydotcom));
