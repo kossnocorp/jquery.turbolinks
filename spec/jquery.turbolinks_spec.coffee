@@ -31,6 +31,11 @@ describe '$ Turbolinks', ->
        callback1.should.have.been.calledOnce
        callback2.should.have.been.calledOnce
 
+  it 'should pass jQuery object to callbacks', ->
+    $(document).trigger('page:load')
+
+    callback1.should.have.been.calledWith($)
+
   describe '$.setReadyEvent', ->
 
     it 'should unbind default (page:load) event', ->

@@ -23,7 +23,7 @@
     _results = [];
     for (_i = 0, _len = callbacks.length; _i < _len; _i++) {
       callback = callbacks[_i];
-      _results.push(callback());
+      _results.push(callback($));
     }
     return _results;
   };

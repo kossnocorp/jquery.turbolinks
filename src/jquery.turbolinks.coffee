@@ -15,7 +15,7 @@ callbacks = []
 
 # Call each callback in list
 ready = ->
-  callback() for callback in callbacks
+  callback($) for callback in callbacks
 
 # Bind `ready` to DOM ready event
 $(ready)
