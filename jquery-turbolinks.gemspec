@@ -9,11 +9,10 @@ Gem::Specification.new do |gem|
 
   gem.authors           = ['Sasha Koss']
   gem.email             = 'koss@nocorp.me'
-  gem.date              = '2012-10-03'
 
   gem.description       = 'jQuery plugin for drop-in fix binded events problem caused by Turbolinks'
   gem.summary           = 'jQuery plugin for drop-in fix binded events problem caused by Turbolinks'
-  gem.homepage          = 'https://github.com/kossnocorp/jquery-turbolinks'
+  gem.homepage          = 'https://github.com/kossnocorp/jquery.turbolinks'
 
   gem.executables       = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files             = `git ls-files`.split("\n")
