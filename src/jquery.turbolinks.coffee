@@ -23,6 +23,7 @@ $(ready)
 # Store callbacks in list on `$` and `$.ready`
 $.fn.ready = (callback) ->
   callbacks.push(callback)
+  callback($) if $.isReady
 
 # Bind ready to passed event
 $.setReadyEvent = (event) ->
