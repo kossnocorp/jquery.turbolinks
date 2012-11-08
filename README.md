@@ -39,7 +39,7 @@ This project uses [Semantic Versioning](http://semver.org/) for release numberin
 ## 1.0.0-rc (November 8, 2012)
 
 * Add turbolinks as dependency (kudos to [@gbchaosmaster](https://github.com/gbchaosmaster));
-* run callback after adding to waiting list if $.isReady [#6](https://github.com/kossnocorp/jquery.turbolinks/issues/6).
+* run callback after adding to waiting list if `$.isReady` [#6](https://github.com/kossnocorp/jquery.turbolinks/issues/6).
 
 ## 0.2.1 (October 15, 2012)
 
