@@ -17,41 +17,57 @@ describe '$ Turbolinks', ->
 
   callback1 = callback2 = null
 
-  beforeEach ->
-     $(callback1 = sinon.spy())
-     $(callback2 = sinon.spy())
+  describe "DOM isn't ready", ->
 
-  it '''
-       should trigger callbacks passed to
-       `$()` and `$.ready()` when page:load
-       event fired
-     ''', ->
-       $(document).trigger('page:load')
+    beforeEach ->
+      $.isReady = false
 
-       callback1.should.have.been.calledOnce
-       callback2.should.have.been.calledOnce
+      $(callback1 = sinon.spy())
+      $(callback2 = sinon.spy())
 
-  it 'should pass jQuery object to callbacks', ->
-    $(document).trigger('page:load')
+    it '''
+         should trigger callbacks passed to
+         `$()` and `$.ready()` when page:load
+         event fired
+       ''', ->
+         $(document).trigger('page:load')
 
-    callback1.should.have.been.calledWith($)
+         callback1.should.have.been.calledOnce
+         callback2.should.have.been.calledOnce
 
-  describe '$.setReadyEvent', ->
+    it 'should pass jQuery object to callbacks', ->
+      $(document).trigger('page:load')
 
-    it 'should unbind default (page:load) event', ->
-       $.setReadyEvent('random_event_name')
+      callback1.should.have.been.calledWith($)
 
-       $(document).trigger('page:load')
+    describe '$.setReadyEvent', ->
 
-       callback1.should.have.not.been.called
-       callback2.should.have.not.been.called
+      it 'should unbind default (page:load) event', ->
+        $.setReadyEvent('random_event_name')
 
-    it 'should bind ready to passed function', ->
-       $.setReadyEvent('page:change')
+        $(document).trigger('page:load')
 
-       $(document)
-         .trigger('page:load')
-         .trigger('page:change')
+        callback1.should.have.not.been.called
+        callback2.should.have.not.been.called
 
-       callback1.should.have.been.calledOnce
-       callback2.should.have.been.calledOnce
+      it 'should bind ready to passed function', ->
+        $.setReadyEvent('page:change')
+
+        $(document)
+          .trigger('page:load')
+          .trigger('page:change')
+
+        callback1.should.have.been.calledOnce
+        callback2.should.have.been.calledOnce
+
+  describe "DOM is ready", ->
+
+    beforeEach ->
+      $.isReady = true
+
+      $(callback1 = sinon.spy())
+      $(callback2 = sinon.spy())
+
+    it 'should call trigger right after add to waiting list', ->
+      callback1.should.have.been.calledOnce
+      callback2.should.have.been.calledOnce
