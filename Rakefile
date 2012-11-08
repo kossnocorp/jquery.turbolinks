@@ -11,7 +11,7 @@ namespace :gem do
   end
   
   task release: :build do
-    system "gem push jquery-turbolinks-#{Bunder::VERSION}"
+    system "gem push jquery-turbolinks-#{JqueryTurbolinks::VERSION}.gem"
   end
 end
 
