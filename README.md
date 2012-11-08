@@ -36,9 +36,14 @@ $.setReadyEvent('page:change');
 
 This project uses [Semantic Versioning](http://semver.org/) for release numbering.
 
+## 1.0.0-rc (November 8, 2012)
+
+* Add turbolinks as dependency (kudos to [@gbchaosmaster](https://github.com/gbchaosmaster));
+* run callback after adding to waintg list if $.isReady [#6](https://github.com/kossnocorp/jquery.turbolinks/issues/6).
+
 ## 0.2.1 (October 15, 2012)
 
-* Pass jQuery object to each callback (https://github.com/kossnocorp/jquery.turbolinks/issues/4)
+* Pass jQuery object to each callback [#4](https://github.com/kossnocorp/jquery.turbolinks/issues/4)
 
 ## 0.2.0 (October 10, 2012)
 
