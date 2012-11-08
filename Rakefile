@@ -2,6 +2,30 @@ require 'rubygems'
 require 'open3'
 require 'talks'
 
+$LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
+require 'jquery-turbolinks/version'
+ 
+namespace :gem do
+  task :build do
+    system 'gem build jquery-turbolinks.gemspec'
+  end
+  
+  task release: :build do
+    system "gem push jquery-turbolinks-#{Bunder::VERSION}"
+  end
+end
+
+namespace :js do
+  task :build do
+    command = [
+      './node_modules/coffee-script/bin/coffee',
+      '--compile',
+      '--output ./vendor/assets/javascripts/ ./src/jquery.turbolinks.coffee' 
+    ]
+    system command.join(' ')
+  end
+end
+
 task :test do
  stdin, stdout, stderr = Open3.popen3 \
     './node_modules/mocha/bin/mocha ./spec/*_spec.coffee --compilers coffee:coffee-script -R spec -c'
@@ -35,8 +59,4 @@ task :test do
 
   `bundle exec terminal-notifier -message '#{message}' -title 'Test results' -remove TEST_RESULTS -group TEST_RESULTS`
   Talks.say message, detach: true
-end
-
-task :build do
-  `./node_modules/coffee-script/bin/coffee --compile --output ./vendor/assets/javascripts/ ./src/jquery.turbolinks.coffee`
 end
