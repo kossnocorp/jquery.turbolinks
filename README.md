@@ -50,7 +50,7 @@ This project uses [Semantic Versioning](http://semver.org/) for release numberin
 
 * Set $.isReady to false after `page:fetch` [#6](https://github.com/kossnocorp/jquery.turbolinks/issues/6);
 * add `$.setFetchEvent` function;
-* remove all delegated events after trigger fetch event [#8](https://github.com/kossnocorp/jquery.turbolinks/issues/8);
+* remove all delegated events after trigger fetch event [#8](https://github.com/kossnocorp/jquery.turbolinks/issues/8).
 
 ## 1.0.0-rc (November 8, 2012)
 
