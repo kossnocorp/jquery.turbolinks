@@ -21,6 +21,7 @@ describe '$ Turbolinks', ->
 
     beforeEach ->
       $.setReadyEvent('page:load')
+      $.setFetchEvent('page:fetch')
       $.isReady = false
 
       $(callback1 = sinon.spy())
@@ -45,6 +46,7 @@ describe '$ Turbolinks', ->
 
       beforeEach ->
         $.setReadyEvent('page:load')
+        $.setFetchEvent('page:fetch')
 
       it 'should unbind default (page:load) event', ->
         $.setReadyEvent('random_event_name')
@@ -64,10 +66,28 @@ describe '$ Turbolinks', ->
         callback1.should.have.been.calledOnce
         callback2.should.have.been.calledOnce
 
+    describe '$.setFetchEvent', ->
+
+      beforeEach ->
+        $.setReadyEvent('page:load')
+        $.setFetchEvent('page:fetch')
+        $.isReady = true
+
+      it 'should unbind default (page:fetch) event', ->
+        $.setFetchEvent('random_event_name')
+        $(document).trigger('page:fetch')
+        $.isReady.should.to.be.true
+        
+      it 'should bind passed fetch event', ->
+        $.setFetchEvent('page:loading')
+        $(document).trigger('page:loading')
+        $.isReady.should.to.be.false
+
   describe 'DOM is ready', ->
 
     beforeEach ->
       $.setReadyEvent('page:load')
+      $.setFetchEvent('page:fetch')
       $.isReady = true
 
     it 'should call trigger right after add to waiting list', ->
