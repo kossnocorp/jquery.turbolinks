@@ -20,6 +20,7 @@ describe '$ Turbolinks', ->
   describe "DOM isn't ready", ->
 
     beforeEach ->
+      $.setReadyEvent('page:load')
       $.isReady = false
 
       $(callback1 = sinon.spy())
@@ -42,6 +43,9 @@ describe '$ Turbolinks', ->
 
     describe '$.setReadyEvent', ->
 
+      beforeEach ->
+        $.setReadyEvent('page:load')
+
       it 'should unbind default (page:load) event', ->
         $.setReadyEvent('random_event_name')
 
@@ -63,6 +67,7 @@ describe '$ Turbolinks', ->
   describe "DOM is ready", ->
 
     beforeEach ->
+      $.setReadyEvent('page:load')
       $.isReady = true
 
       $(callback1 = sinon.spy())
