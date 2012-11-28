@@ -13,6 +13,10 @@ $         = require('jquery')
 chai.should()
 chai.use(sinonChai)
 
+getUniqId = do ->
+  counter = 0
+  -> 'id_' + (counter += 1)
+
 describe '$ Turbolinks', ->
 
   callback1 = callback2 = null
@@ -41,6 +45,24 @@ describe '$ Turbolinks', ->
       $(document).trigger('page:load')
 
       callback1.should.have.been.calledWith($)
+
+    it '''
+         should remove all events delegated to
+         document after trigger fetch 
+       ''', ->
+         id       = getUniqId()
+         selector = '#' + id
+         addEl    = ->
+                      $('body').empty()
+                      $('<div>').attr(id: id).appendTo('body')
+
+         addEl()
+         $(document).on('event_name', selector, callback1)
+         $(selector).trigger('event_name')
+         $(document).trigger('page:fetch')
+         addEl()
+         $(selector).trigger('event_name')
+         callback1.should.have.been.calledOnce
 
     describe '$.setReadyEvent', ->
 
