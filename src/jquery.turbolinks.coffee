@@ -17,6 +17,15 @@ callbacks = []
 ready = ->
   callback($) for callback in callbacks
 
+# Turbolinks ready event
+turbolinksReady = ->
+  $.isReady = true
+  ready()
+
+# Turbolinks fetch:start handler
+fetchStart = ->
+  $.isReady = false
+
 # Bind `ready` to DOM ready event
 $(ready)
 
@@ -29,7 +38,10 @@ $.fn.ready = (callback) ->
 $.setReadyEvent = (event) ->
   $(document)
     .off('.turbolinks')
-    .on(event + '.turbolinks', ready)
+    .on(event + '.turbolinks', turbolinksReady)
 
 # Bind `ready` to Tubolinks page load event
 $.setReadyEvent('page:load')
+
+# After page load
+$(document).on('page:fetch', fetchStart)
