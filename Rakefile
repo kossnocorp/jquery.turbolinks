@@ -4,15 +4,21 @@ require 'talks'
 
 $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
 require 'jquery-turbolinks/version'
- 
-namespace :gem do
-  task :build do
+
+namespace :release do
+  task :build_gem do
     system 'gem build jquery-turbolinks.gemspec'
   end
   
-  task release: :build do
+  task gem: :build_gem do
     system "gem push jquery-turbolinks-#{JqueryTurbolinks::VERSION}.gem"
   end
+
+  task :npm do
+    system 'npm publish'
+  end
+
+  task all: [:gem, :npm]
 end
 
 namespace :js do
