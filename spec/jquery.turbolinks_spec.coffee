@@ -70,9 +70,15 @@ describe '$ Turbolinks', ->
       $.setReadyEvent('page:load')
       $.isReady = true
 
-      $(callback1 = sinon.spy())
-      $(callback2 = sinon.spy())
-
     it 'should call trigger right after add to waiting list', ->
-      callback1.should.have.been.calledOnce
+      $(callback = sinon.spy())
+      callback.should.have.been.calledOnce
+
+    it 'should not call trigger after page:fetch and before page:load', ->
+      $(document).trigger('page:fetch')
+      $(callback1 = sinon.spy())
+      callback1.should.have.not.been.called
+
+      $(document).trigger('page:load')
+      $(callback2 = sinon.spy())
       callback2.should.have.been.calledOnce
