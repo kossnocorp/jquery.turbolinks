@@ -22,9 +22,8 @@ turbolinksReady = ->
   $.isReady = true
   ready()
 
-# Turbolinks fetch:start handler
-fetchStart = ->
-  $.isReady = false
+# Fetch event handler
+fetch = -> $.isReady = false
 
 # Bind `ready` to DOM ready event
 $(ready)
@@ -37,11 +36,17 @@ $.fn.ready = (callback) ->
 # Bind ready to passed event
 $.setReadyEvent = (event) ->
   $(document)
-    .off('.turbolinks')
-    .on(event + '.turbolinks', turbolinksReady)
+    .off('.turbolinks-ready')
+    .on(event + '.turbolinks-ready', turbolinksReady)
 
-# Bind `ready` to Tubolinks page load event
+# Bind fetch event
+$.setFetchEvent = (event) ->
+  $(document)
+    .off('.turbolinks-fetch')
+    .on(event + '.turbolinks-fetch', fetch)
+
+# Bind `ready` to Tubolinks page:load
 $.setReadyEvent('page:load')
 
-# After page load
-$(document).on('page:fetch', fetchStart)
+# Bind fetch to Turbolinks page:fetch
+$.setFetchEvent('page:fetch')
