@@ -23,7 +23,9 @@ turbolinksReady = ->
   ready()
 
 # Fetch event handler
-fetch = -> $.isReady = false
+fetch = ->
+  $(document).off(undefined, '**')
+  $.isReady = false
 
 # Bind `ready` to DOM ready event
 $(ready)
