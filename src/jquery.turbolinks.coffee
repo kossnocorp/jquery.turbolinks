@@ -1,5 +1,5 @@
 ###
-  jquery.turbolinks.js ~ v1.0.0-rc ~ https://github.com/kossnocorp/jquery.turbolinks
+  jquery.turbolinks.js ~ v1.0.0-rc1 ~ https://github.com/kossnocorp/jquery.turbolinks
 
   jQuery plugin for drop-in fix binded events problem caused by Turbolinks
 
