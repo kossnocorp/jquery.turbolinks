@@ -32,6 +32,16 @@ If you want to change it use `$.setReadyEvent` function:
 $.setReadyEvent('page:change');
 ```
 
+## `$.setFetchEvent`
+
+By default right after trigger `page:fetch` `$.isReady` is set to false. And after `page:load` is set to true.
+
+If you want to change default behaviour you can use `$.setFetchEvent`:
+
+``` js
+$.setReadyEvent('custom_loading_event');
+```
+
 # Changelog
 
 This project uses [Semantic Versioning](http://semver.org/) for release numbering.
