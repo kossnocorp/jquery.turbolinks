@@ -64,7 +64,7 @@ describe '$ Turbolinks', ->
         callback1.should.have.been.calledOnce
         callback2.should.have.been.calledOnce
 
-  describe "DOM is ready", ->
+  describe 'DOM is ready', ->
 
     beforeEach ->
       $.setReadyEvent('page:load')
