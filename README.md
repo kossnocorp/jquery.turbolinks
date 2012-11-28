@@ -46,11 +46,11 @@ $.setReadyEvent('custom_loading_event');
 
 This project uses [Semantic Versioning](http://semver.org/) for release numbering.
 
-## WIP 1.0.0-rc1 (November 28, 2012)
+## 1.0.0-rc1 (November 28, 2012)
 
 * Set $.isReady to false after `page:fetch` [#6](https://github.com/kossnocorp/jquery.turbolinks/issues/6);
 * add `$.setFetchEvent` function;
-* [#8](https://github.com/kossnocorp/jquery.turbolinks/issues/8);
+* remove all delegated events after trigger fetch event [#8](https://github.com/kossnocorp/jquery.turbolinks/issues/8);
 
 ## 1.0.0-rc (November 8, 2012)
 
