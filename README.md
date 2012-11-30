@@ -8,6 +8,8 @@ I wrote jquery.turbolinks to solve this problem in [my project](http://amplifr.c
 
 Sponsored by [Evil Martians](http://evilmartians.com/).
 
+This project is a member of the [OSS Manifesto](http://ossmanifesto.org/).
+
 ## Usage
 
 Gemfile:
