@@ -8,7 +8,7 @@
   Copyright (c) 2012 Sasha Koss
 ###
 
-$ = require?('jquery') || window.jQuery
+$ = window.jQuery or require?('jquery')
 
 # List for store callbacks passed to `$` or `$.ready`
 callbacks = []
