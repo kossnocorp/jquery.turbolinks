@@ -46,24 +46,6 @@ describe '$ Turbolinks', ->
 
       callback1.should.have.been.calledWith($)
 
-    it '''
-         should remove all events delegated to
-         document after trigger fetch 
-       ''', ->
-         id       = getUniqId()
-         selector = '#' + id
-         addEl    = ->
-                      $('body').empty()
-                      $('<div>').attr(id: id).appendTo('body')
-
-         addEl()
-         $(document).on('event_name', selector, callback1)
-         $(selector).trigger('event_name')
-         $(document).trigger('page:fetch')
-         addEl()
-         $(selector).trigger('event_name')
-         callback1.should.have.been.calledOnce
-
     describe '$.setReadyEvent', ->
 
       beforeEach ->
