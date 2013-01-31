@@ -44,6 +44,26 @@ If you want to change default behaviour you can use `$.setFetchEvent`:
 $.setReadyEvent('custom_loading_event');
 ```
 
+## Troubleshooting
+
+### Events firing twice or more
+
+If you find that some events are being fired multiple times after using jQuery Turbolinks, you may have been binding your `document` events inside a `$(function())` block. For instance, this example below can be a common occurrence and should be avoided:
+
+``` javascript
+/* BAD: don't bind 'document' events while inside $()! */
+$(function() {
+  $(document).on('click', 'button', function() { ... })
+});
+```
+
+You should be binding your events outside a `$(function())` block. This will ensure that your events will only ever be bound once.
+
+``` javascript
+/* Good: events are bound outside a $() wrapper. */
+$(document).on('click', 'button', function() { ... })
+```
+
 # Changelog
 
 This project uses [Semantic Versioning](http://semver.org/) for release numbering.
