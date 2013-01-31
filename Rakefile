@@ -9,7 +9,7 @@ namespace :release do
   task :build_gem do
     system 'gem build jquery-turbolinks.gemspec'
   end
-  
+
   task gem: :build_gem do
     system "gem push jquery-turbolinks-#{JqueryTurbolinks::VERSION}.gem"
   end
@@ -26,7 +26,8 @@ namespace :js do
     command = [
       './node_modules/coffee-script/bin/coffee',
       '--compile',
-      '--output ./vendor/assets/javascripts/ ./src/jquery.turbolinks.coffee' 
+      '--output ./vendor/assets/javascripts/',
+      './src/jquery.turbolinks.coffee'
     ]
     system command.join(' ')
   end

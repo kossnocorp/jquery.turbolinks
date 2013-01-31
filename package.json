@@ -1,6 +1,6 @@
 {
   "name": "jquery.turbolinks",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "author": "Sasha Koss <koss@nocorp.me>",
   "description": "jQuery plugin for drop-in fix binded events problem caused by Turbolinks",
 
