@@ -79,6 +79,6 @@ This project uses [Semantic Versioning](http://semver.org/) for release numberin
 
 # Contributors
 
-Idea and code by [@kossnocorp](http://koss.nocorp.me/).
+Idea and code by [@kossnocorp](http://koss.nocorp.me/), with special thanks to the project's [contributors](https://github.com/kossnocorp/jquery.turbolinks/graphs/contributors).
 
 # [The MIT License](https://github.com/kossnocorp/jquery.turbolinks/blob/master/LICENSE.md)
