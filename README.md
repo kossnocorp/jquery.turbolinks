@@ -72,8 +72,8 @@ This project uses [Semantic Versioning](http://semver.org/) for release numberin
 
 ### 1.0.0-rc2 (January 31, 2013)
 
-* Fix problem with 3rd-party libraries [#12](https://github.com/kossnocorp/jquery.turbolinks/issues/12), [#15](https://github.com/kossnocorp/jquery.turbolinks/issues/15)
-* Reopen [#8](https://github.com/kossnocorp/jquery.turbolinks/issues/8)
+* Fix problem with 3rd-party libraries [#12](https://github.com/kossnocorp/jquery.turbolinks/issues/12), [#15](https://github.com/kossnocorp/jquery.turbolinks/issues/15) (kudos to [@rstacruz](https://github.com/rstacruz));
+* Reopen [#8](https://github.com/kossnocorp/jquery.turbolinks/issues/8).
 
 ### 1.0.0-rc1 (November 28, 2012)
 
@@ -101,7 +101,7 @@ This project uses [Semantic Versioning](http://semver.org/) for release numberin
 
 ## Contributors
 
-Idea and code by [@kossnocorp](http://koss.nocorp.me/), with special thanks to the project's [contributors](https://github.com/kossnocorp/jquery.turbolinks/graphs/contributors).
+Initial idea and code by [@kossnocorp](http://koss.nocorp.me/), with special thanks to [@rstacruz](https://github.com/rstacruz) and other the project's [contributors](https://github.com/kossnocorp/jquery.turbolinks/graphs/contributors).
 
 ## License
 
