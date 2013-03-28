@@ -1,5 +1,7 @@
 # jQuery Turbolinks
 
+[![Build Status](https://secure.travis-ci.org/kossnocorp/jquery.turbolinks.png?branch=master)](http://travis-ci.org/kossnocorp/jquery.turbolinks)
+
 Do you like [Turbolinks](https://github.com/rails/turbolinks)? It's easy and fast way to improve user experience of surfing on your website.
 
 But if you have a large codebase with lots of `$(el).bind(...)` Turbolinks will surprise you. Most part of your JavaScripts will stop working in usual way. It's because the nodes on which you bind events no longer exist.
