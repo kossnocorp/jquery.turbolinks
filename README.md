@@ -72,6 +72,10 @@ $(document).on('click', 'button', function() { ... })
 
 This project uses [Semantic Versioning](http://semver.org/) for release numbering.
 
+### 1.0.0 (April 5, 2013)
+
+* Add uglified version.
+
 ### 1.0.0-rc2 (January 31, 2013)
 
 * Fix problem with 3rd-party libraries [#12](https://github.com/kossnocorp/jquery.turbolinks/issues/12), [#15](https://github.com/kossnocorp/jquery.turbolinks/issues/15) (kudos to [@rstacruz](https://github.com/rstacruz));
