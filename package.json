@@ -1,7 +1,7 @@
 {
   "name": "jquery.turbolinks",
-  "version": "1.0.0-rc2",
-  "author": "Sasha Koss <koss@nocorp.me>",
+  "version": "1.0.0",
+  "author": "Sasha Koss <kossnocorp@gmail.com>",
   "description": "jQuery plugin for drop-in fix binded events problem caused by Turbolinks",
 
   "devDependencies": {
@@ -10,7 +10,6 @@
     "chai":          "*",
     "sinon":         "*",
     "sinon-chai":    "*",
-    "uglify-js":     "*",
     "jquery":        "*",
     "jsdom":         "*"
   },
