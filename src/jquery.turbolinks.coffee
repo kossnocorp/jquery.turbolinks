@@ -1,39 +1,31 @@
-###
-  jquery.turbolinks.js ~ https://github.com/kossnocorp/jquery.turbolinks
-
-  jQuery plugin for drop-in fix binded events problem caused by Turbolinks
-
-  The MIT License
-
-  Copyright (c) 2012-2013 Sasha Koss
-###
+# jQuery.Turbolinks ~ https://github.com/kossnocorp/jquery.turbolinks
 
 $ = window.jQuery or require?('jquery')
 $document = $(document)
 
 $.turbo =
-  version: "2.0.0.pre0"
-  
+  version: '2.0.0.rc'
+
   isReady: false
 
   # Hook onto the events that Turbolinks triggers.
   use: (load, fetch) ->
     $document
       .off('.turbo')
-      .on("#{load}.turbo",  @onload)
-      .on("#{fetch}.turbo", @onfetch)
-        
+      .on("#{load}.turbo", @onLoad)
+      .on("#{fetch}.turbo", @onFetch)
+
   addCallback: (callback) ->
-    $document.on 'turbo:ready', callback
+    $document.on('turbo:ready', callback)
     callback($) if $.turbo.isReady
-    
-  onload: ->
+
+  onLoad: ->
     $.turbo.isReady = true
-    $document.trigger 'turbo:ready'
-    
-  onfetch: ->
+    $document.trigger('turbo:ready')
+
+  onFetch: ->
     $.turbo.isReady = false
-    
+
   # Registers jQuery.Turbolinks by monkey-patching jQuery's
   # `ready` handler. (Internal)
   #
@@ -42,9 +34,9 @@ $.turbo =
   #     registering callbacks under a new event called `turbo:ready`.
   #
   register: ->
-    $(@onload)  #[1]
-    $.fn.ready = @addCallback  #[2]
+    $(@onload) #[1]
+    $.fn.ready = @addCallback #[2]
 
 # Use with Turbolinks.
 $.turbo.register()
-$.turbo.use 'page:load', 'page:fetch'
+$.turbo.use('page:load', 'page:fetch')
