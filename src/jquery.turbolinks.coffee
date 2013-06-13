@@ -34,7 +34,7 @@ $.turbo =
   #     registering callbacks under a new event called `turbo:ready`.
   #
   register: ->
-    $(@onload) #[1]
+    $(@onLoad) #[1]
     $.fn.ready = @addCallback #[2]
 
 # Use with Turbolinks.
