@@ -24,7 +24,6 @@ describe '$ Turbolinks', ->
   describe "DOM isn't ready", ->
 
     beforeEach ->
-      $.turbo.use('page:load', 'page:fetch')
       $.turbo.isReady = false
 
       $(callback1 = sinon.spy())
@@ -40,18 +39,12 @@ describe '$ Turbolinks', ->
          callback1.should.have.been.calledOnce
          callback2.should.have.been.calledOnce
 
-    it 'should pass jQuery object to callbacks', ->
-      $(document).trigger('page:load')
-
-      callback1.should.have.been.calledWith($)
-
-    describe '$.setReadyEvent', ->
-
+    describe '$.turbo.use', ->
       beforeEach ->
-      $.turbo.use('page:load', 'page:fetch')
+        $.turbo.use('page:load', 'page:fetch')
 
       it 'should unbind default (page:load) event', ->
-        $.setReadyEvent('random_event_name')
+        $.turbo.use('other1', 'other2')
 
         $(document).trigger('page:load')
 
@@ -59,8 +52,6 @@ describe '$ Turbolinks', ->
         callback2.should.have.not.been.called
 
       it 'should bind ready to passed function', ->
-        $.setReadyEvent('page:change')
-
         $(document)
           .trigger('page:load')
           .trigger('page:change')
