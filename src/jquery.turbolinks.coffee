@@ -4,7 +4,7 @@ $ = window.jQuery or require?('jquery')
 $document = $(document)
 
 $.turbo =
-  version: '2.0.0.rc'
+  version: '2.0.0'
 
   isReady: false
 
