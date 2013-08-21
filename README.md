@@ -12,6 +12,11 @@ Initially sponsored by [Evil Martians](http://evilmartians.com/).
 
 This project is a member of the [OSS Manifesto](http://ossmanifesto.org/).
 
+## Important
+
+This readme points to the `master` version (v2.0.0) of jQuery Turbolinks. For 
+older versions, see [v1.0.0rc2 README][oldreadme].
+
 ## Usage
 
 Gemfile:
@@ -73,9 +78,10 @@ $(document).on('click', 'button', function() { ... })
 
 This project uses [Semantic Versioning](http://semver.org/) for release numbering.
 
-### 2.0.0
+### 2.0.0 (unreleased - master)
 
-* New API.
+* Rewritten, smaller, with a completely new API. This deprecates the old 
+`$.setFetchEvent` and `$.setReadyEvent` API.
 
 ### 1.0.0 (April 5, 2013)
 
@@ -120,3 +126,4 @@ Initial idea and code by [@kossnocorp](http://koss.nocorp.me/), with special tha
 
 [page:load]: https://github.com/rails/turbolinks/#events
 [page:fetch]: https://github.com/rails/turbolinks/#events
+[oldreadme]: https://github.com/kossnocorp/jquery.turbolinks/blob/v1.0.0.rc2/README.md
