@@ -15,38 +15,39 @@ This project is a member of the [OSS Manifesto](http://ossmanifesto.org/).
 ## Usage
 
 Gemfile:
+
 ``` js
 gem 'jquery-turbolinks'
 ```
 
-JavaScript manifest file:
+Add it to your JavaScript manifest file, in this order:
+
 ``` js
+//= require jquery
 //= require jquery.turbolinks
+//
+// ... your other scripts here ...
+//
+//= require turbolinks
 ```
 
 And it just works!
 
-## Customization
+## API and Customization
 
-### $.setReadyEvent
+### $.turbo.use
 
-By default [ready](https://github.com/kossnocorp/jquery.turbolinks/blob/master/src/jquery.turbolinks.coffee#L17:L18) function is bound to [page:load](https://github.com/rails/turbolinks/#events) event.
-
-If you want to change it use `$.setReadyEvent` function:
-
-``` js
-$.setReadyEvent('page:change');
-```
-
-### $.setFetchEvent
-
-By default right after trigger `page:fetch` `$.isReady` is set to false. And after `page:load` is set to true.
-
-If you want to change default behaviour you can use `$.setFetchEvent`:
+By default, jQuery.Turbolinks is bound to [page:load] and [page:fetch]. To use 
+different events (say, if you're not using Turbolinks), use:
 
 ``` js
-$.setReadyEvent('custom_loading_event');
+$.turbo.use('pjax:start', 'pjax:end');
 ```
+
+## $.turbo.isReady
+
+You can check if the page is ready by checking `$.turbo.isReady`, which will be 
+either `true` or `false` depending on whether the page is loading.
 
 ## Troubleshooting
 
@@ -71,6 +72,10 @@ $(document).on('click', 'button', function() { ... })
 ## Changelog
 
 This project uses [Semantic Versioning](http://semver.org/) for release numbering.
+
+### 2.0.0
+
+* New API.
 
 ### 1.0.0 (April 5, 2013)
 
@@ -112,3 +117,6 @@ Initial idea and code by [@kossnocorp](http://koss.nocorp.me/), with special tha
 ## License
 
 [The MIT License](https://github.com/kossnocorp/jquery.turbolinks/blob/master/LICENSE.md)
+
+[page:load]: https://github.com/rails/turbolinks/#events
+[page:fetch]: https://github.com/rails/turbolinks/#events
