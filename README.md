@@ -78,43 +78,7 @@ $(document).on('click', 'button', function() { ... })
 
 This project uses [Semantic Versioning](http://semver.org/) for release numbering.
 
-### 2.0.0 (unreleased - master)
-
-* Rewritten, smaller, with a completely new API. This deprecates the old 
-`$.setFetchEvent` and `$.setReadyEvent` API.
-
-### 1.0.0 (April 5, 2013)
-
-* Add uglified version.
-
-### 1.0.0-rc2 (January 31, 2013)
-
-* Fix problem with 3rd-party libraries [#12](https://github.com/kossnocorp/jquery.turbolinks/issues/12), [#15](https://github.com/kossnocorp/jquery.turbolinks/issues/15) (kudos to [@rstacruz](https://github.com/rstacruz));
-* Reopen [#8](https://github.com/kossnocorp/jquery.turbolinks/issues/8).
-
-### 1.0.0-rc1 (November 28, 2012)
-
-* Set $.isReady to false after `page:fetch` [#6](https://github.com/kossnocorp/jquery.turbolinks/issues/6);
-* add `$.setFetchEvent` function;
-* remove all delegated events after trigger fetch event [#8](https://github.com/kossnocorp/jquery.turbolinks/issues/8).
-
-### 1.0.0-rc (November 8, 2012)
-
-* Add turbolinks as dependency (kudos to [@gbchaosmaster](https://github.com/gbchaosmaster));
-* run callback after adding to waiting list if `$.isReady` [#6](https://github.com/kossnocorp/jquery.turbolinks/issues/6).
-
-### 0.2.1 (October 15, 2012)
-
-* Pass jQuery object to each callback [#4](https://github.com/kossnocorp/jquery.turbolinks/issues/4)
-
-### 0.2.0 (October 10, 2012)
-
-* Change event: `page:change` -> `page:load` (kudos to [@davydotcom](https://github.com/davydotcom));
-* added ability to change ready event via `$.setReadyEvent`
-
-### 0.1.0 (October 3, 2012)
-
-* First, initial release
+For changelog notes, checkout [releases page](https://github.com/kossnocorp/jquery.turbolinks/releases).
 
 ## Contributors
 
