@@ -14,8 +14,8 @@ This project is a member of the [OSS Manifesto](http://ossmanifesto.org/).
 
 ## Important
 
-This readme points to the `master` version (v2.0.0) of jQuery Turbolinks. For 
-older versions, see [v1.0.0rc2 README][oldreadme].
+This readme points to the latest version (v2.x) of jQuery Turbolinks, which 
+features new 2.0 API. For older versions, see [v1.0.0rc2 README][oldreadme].
 
 ## Usage
 
