@@ -21,10 +21,15 @@ describe '$ Turbolinks', ->
 
   callback1 = callback2 = null
 
+  # Simulate a reset.
+  beforeEach ->
+    $.turbo.isReady = false
+    $.turbo.use 'page:load', 'page:fetch'
+    $(document).off('turbo:ready')
+
   describe "DOM isn't ready", ->
 
     beforeEach ->
-      $.turbo.isReady = false
 
       $(callback1 = sinon.spy())
       $(callback2 = sinon.spy())
