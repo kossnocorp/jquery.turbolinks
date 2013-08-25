@@ -22,9 +22,12 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
       return $document.off('.turbo').on("" + load + ".turbo", this.onLoad).on("" + fetch + ".turbo", this.onFetch);
     },
     addCallback: function(callback) {
-      $document.on('turbo:ready', callback);
       if ($.turbo.isReady) {
         return callback($);
+      } else {
+        return $document.on('turbo:ready', function() {
+          return callback($);
+        });
       }
     },
     onLoad: function() {
