@@ -30,7 +30,6 @@ describe '$ Turbolinks', ->
   describe "DOM isn't ready", ->
 
     beforeEach ->
-
       $(callback1 = sinon.spy())
       $(callback2 = sinon.spy())
 
@@ -43,6 +42,13 @@ describe '$ Turbolinks', ->
 
          callback1.should.have.been.calledOnce
          callback2.should.have.been.calledOnce
+
+    it 'should pass $ as the first argument to callbacks', (done) ->
+      $ ($$) ->
+        $$.fn.should.be.an.object
+        done()
+
+      $(document).trigger 'page:load'
 
     describe '$.turbo.use', ->
       beforeEach ->
@@ -98,3 +104,8 @@ describe '$ Turbolinks', ->
       $(document).trigger('page:load')
       $(callback2 = sinon.spy())
       callback2.should.have.been.calledOnce
+
+    it 'should pass $ as the first argument to callbacks', (done) ->
+      $ ($$) ->
+        $$.fn.should.be.an.object
+        done()
