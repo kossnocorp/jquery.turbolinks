@@ -29,6 +29,7 @@ Add it to your JavaScript manifest file, in this order:
 
 ``` js
 //= require jquery
+//= require jquery_ujs
 //= require jquery.turbolinks
 //
 // ... your other scripts here ...
