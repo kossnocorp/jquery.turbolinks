@@ -29,8 +29,8 @@ Add it to your JavaScript manifest file, in this order:
 
 ``` js
 //= require jquery
-//= require jquery_ujs
 //= require jquery.turbolinks
+//= require jquery_ujs
 //
 // ... your other scripts here ...
 //
@@ -38,6 +38,22 @@ Add it to your JavaScript manifest file, in this order:
 ```
 
 And it just works!
+
+NOTE: Those who use foundation, the `$(function(){ $(document).foundation(); });` has to come before the turbolinks gem.
+
+``` js
+//= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
+//
+// ... your other scripts here ...
+
+$(function(){ $(document).foundation(); });
+
+//
+//= require turbolinks
+```
+
 
 ## API and Customization
 
