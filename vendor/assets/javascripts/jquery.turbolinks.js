@@ -16,7 +16,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
   $document = $(document);
 
   $.turbo = {
-    version: '2.0.1',
+    version: '2.0.2',
     isReady: false,
     use: function(load, fetch) {
       return $document.off('.turbo').on("" + load + ".turbo", this.onLoad).on("" + fetch + ".turbo", this.onFetch);
