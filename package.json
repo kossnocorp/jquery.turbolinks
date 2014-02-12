@@ -5,7 +5,7 @@
   "description": "jQuery plugin for drop-in fix binded events problem caused by Turbolinks",
 
   "devDependencies": {
-    "coffee-script": "*",
+    "coffee-script": "~1.7.1",
     "mocha":         "*",
     "chai":          "*",
     "sinon":         "*",
@@ -21,6 +21,6 @@
   },
 
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./spec/*_spec.coffee --compilers coffee:coffee-script -R spec -c"
+    "test": "./node_modules/mocha/bin/mocha ./spec/*_spec.coffee --compilers coffee:coffee-script/register -R spec -c"
   }
 }
