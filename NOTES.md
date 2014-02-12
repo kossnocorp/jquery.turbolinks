@@ -15,7 +15,7 @@ Updating .js files
 Update the .js files from the source CoffeeScript file using: (do this before 
     releasing)
 
-    $ rake js:build js:uglify
+    $ rake build
 
 Testing
 -------
@@ -29,8 +29,13 @@ Or:
 
     $ rake test
 
-Releasing
----------
+Releasing new versions
+----------------------
+
+ * Bump version (see above)
+ * Build .js (`rake build`)
+ * Release into npm and rubygems (`rake release`)
+ * Draft release in https://github.com/kossnocorp/jquery.turbolinks/releases
 
 Release it into npm/rubygems using:
 
