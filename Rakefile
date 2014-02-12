@@ -21,6 +21,9 @@ namespace :release do
   task all: [:gem, :npm]
 end
 
+desc 'Rebuilds and compresses'
+task :build => %w[js:build js:uglify]
+
 namespace :js do
 
   desc 'Build JavaScript from CoffeeScript source code'

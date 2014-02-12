@@ -12,9 +12,10 @@ Edit the following files:
 Updating .js files
 ------------------
 
-Update the .js files from the source CoffeeScript file using:
+Update the .js files from the source CoffeeScript file using: (do this before 
+    releasing)
 
-    $ rake js:bulid js:uglify
+    $ rake js:build js:uglify
 
 Testing
 -------
