@@ -39,4 +39,4 @@ Releasing new versions
 
 Release it into npm/rubygems using:
 
-    $ rake release
+    $ rake release:all
