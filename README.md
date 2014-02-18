@@ -112,3 +112,7 @@ Initial idea and code by [@kossnocorp](http://koss.nocorp.me/), with special tha
 [page:load]: https://github.com/rails/turbolinks/#events
 [page:fetch]: https://github.com/rails/turbolinks/#events
 [oldreadme]: https://github.com/kossnocorp/jquery.turbolinks/blob/v1.0.0.rc2/README.md
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kossnocorp/jquery.turbolinks/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
