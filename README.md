@@ -39,6 +39,8 @@ Add it to your JavaScript manifest file, in this order:
 
 And it just works!
 
+**Checkout "[Faster page loads with Turbolinks](https://coderwall.com/p/ypzfdw)" for deeper explanation how to use jQuery Turbolink in real world**.
+
 ## API and Customization
 
 ### $.turbo.use
