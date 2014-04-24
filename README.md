@@ -59,24 +59,6 @@ either `true` or `false` depending on whether the page is loading.
 
 ## Troubleshooting
 
-### Zurb Foundation
-
-The `$(function(){ $(document).foundation(); });` has to come before the 
-turbolinks gem.
-
-``` js
-//= require jquery
-//= require jquery.turbolinks
-//= require jquery_ujs
-//
-// ... your other scripts here ...
-
-$(function(){ $(document).foundation(); });
-
-//
-//= require turbolinks
-```
-
 ### Events firing twice or more
 
 If you find that some events are being fired multiple times after using jQuery Turbolinks, you may have been binding your `document` events inside a `$(function())` block. For instance, this example below can be a common occurrence and should be avoided:
