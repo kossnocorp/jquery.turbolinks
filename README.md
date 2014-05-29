@@ -77,6 +77,19 @@ You should be binding your events outside a `$(function())` block. This will ens
 $(document).on('click', 'button', function() { ... })
 ```
 
+### Not working with `$(document).on('ready')`
+
+jQuery Turbolinks doesn't support ready events bound via `$(document).on('ready', function)`. Instead, use `$(document).ready(function)` or `$(function)`.
+
+``` javascript
+// BAD: this will not work.
+$(document).on('ready', function () { /* ... */ });
+
+// OK: these two are guaranteed to work.
+$(document).ready(function () { /* ... */ });
+$(function () { /* ... */ });
+```
+
 ## Changelog
 
 This project uses [Semantic Versioning](http://semver.org/) for release numbering.
