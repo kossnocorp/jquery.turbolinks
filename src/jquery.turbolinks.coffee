@@ -24,8 +24,7 @@ $.turbo =
   addCallback: (callback) ->
     if $.turbo.isReady
       callback($)
-    else
-      $document.on 'turbo:ready', -> callback($)
+    $document.on 'turbo:ready', -> callback($)
 
   onLoad: ->
     $.turbo.isReady = true

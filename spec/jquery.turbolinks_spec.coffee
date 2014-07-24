@@ -80,7 +80,7 @@ describe '$ Turbolinks', ->
         $.turbo.use('page:load', 'random_event_name')
         $(document).trigger('page:fetch')
         $.turbo.isReady.should.to.be.true
-        
+
       it 'should bind passed fetch event', ->
         $.turbo.use('page:load', 'page:loading')
         $(document).trigger('page:loading')
@@ -104,6 +104,15 @@ describe '$ Turbolinks', ->
       $(document).trigger('page:load')
       $(callback2 = sinon.spy())
       callback2.should.have.been.calledOnce
+
+    it 'should call trigger after a subsequent page:fetch and before page:load', ->
+      $(document).trigger('page:fetch')
+      $(document).trigger('page:load')
+      $(callback1 = sinon.spy())
+      callback1.should.have.been.calledOnce
+      $(document).trigger('page:fetch')
+      $(document).trigger('page:load')
+      callback1.should.have.been.calledTwice
 
     it 'should pass $ as the first argument to callbacks', (done) ->
       $ ($$) ->
