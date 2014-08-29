@@ -1,14 +1,22 @@
-jsdom = require('jsdom').jsdom
+before (next) ->
+  require('jsdom').env
+    html: "<!doctype html><html><head><meta charset='utf-8'></head><body></body></html>",
+    done: (errors, window) ->
+      global.window = window
+      global.document = window.document
+      if (errors)
+        errors.forEach(console.error)
+        throw new Error(errors[0].data.error + " (" + errors[0].data.filename + ")")
+      next()
 
-global.document = jsdom()
-global.window   = document.createWindow()
-
-require('../src/jquery.turbolinks.coffee')
+before ->
+  global.$ = require('jquery')
+  global.jQuery = require('jquery')
+  require('../src/jquery.turbolinks.coffee')
 
 chai      = require('chai')
 sinon     = require('sinon')
 sinonChai = require('sinon-chai')
-$         = require('jquery')
 
 chai.should()
 chai.use(sinonChai)
