@@ -16,19 +16,18 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
   $document = $(document);
 
   $.turbo = {
-    version: '2.0.2',
+    version: '2.1.0',
     isReady: false,
     use: function(load, fetch) {
       return $document.off('.turbo').on("" + load + ".turbo", this.onLoad).on("" + fetch + ".turbo", this.onFetch);
     },
     addCallback: function(callback) {
       if ($.turbo.isReady) {
-        return callback($);
-      } else {
-        return $document.on('turbo:ready', function() {
-          return callback($);
-        });
+        callback($);
       }
+      return $document.on('turbo:ready', function() {
+        return callback($);
+      });
     },
     onLoad: function() {
       $.turbo.isReady = true;

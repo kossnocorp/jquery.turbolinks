@@ -34,7 +34,7 @@ Releasing new versions
 
  * Bump version (see above)
  * Build .js (`rake build`)
- * Release into npm and rubygems (`rake release`)
+ * Release into npm and rubygems (`rake release:all`)
  * Draft release in https://github.com/kossnocorp/jquery.turbolinks/releases
 
 Release it into npm/rubygems using:
