@@ -9,12 +9,12 @@
 
   "devDependencies": {
     "coffee-script": "~1.7.1",
-    "mocha":         "*",
-    "chai":          "*",
-    "sinon":         "*",
-    "sinon-chai":    "*",
-    "jquery":        "*",
-    "jsdom":         "*"
+    "mocha":         "~1.21.4",
+    "chai":          "~1.9.1",
+    "sinon":         "~1.10.3",
+    "sinon-chai":    "~2.5.0",
+    "jquery":        "~2.1.1",
+    "jsdom":         "~1.0.0-pre.4"
   },
 
   "license": "MIT",
