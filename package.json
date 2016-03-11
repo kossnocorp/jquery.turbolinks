@@ -25,5 +25,7 @@
 
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./spec/*_spec.coffee --compilers coffee:coffee-script/register -R spec -c"
-  }
+  },
+
+  "main": "./vendor/assets/javascripts/jquery.turbolinks.js"
 }
