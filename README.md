@@ -1,10 +1,12 @@
 # :warning: Deprecated :warning:
 
-This gem does not work with Turbolinks 5+, and is not compatible with many jQuery plugins. We do not recommend using it. Instead, please consider writing your JavaScript in a way that makes it compatible with Turbolinks. These resources can help:
+**This gem does not work with Turbolinks 5+, and is not compatible with many jQuery plugins. We do not recommend using it.** Instead, please consider writing your JavaScript in a way that makes it compatible with Turbolinks. These resources can help:
 
 - [RSJS](https://ricostacruz.com/rsjs) - A reasonable structure for JS, a document outlining how to write JavaScript as "behaviors" that will be compatible with Turbolinks.
 
 - [onmount](https://www.npmjs.com/package/onmount) - 1kb library to run something when a DOM element appears and when it exits.
+
+Rationale: making jQuery plugins compatible with Turbolinks requires more than simply dropping in a library. It should be able to setup and teardown its changes as needed, which is something you can't automate. jQuery Turbolinks's approach worked well enough for many libraries back in 2013, but today this is no longer the case. Given its utility is very limited, we've decided to no longer maintain this library.
 
 ----
 
